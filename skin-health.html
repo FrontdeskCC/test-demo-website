@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Health & Dermatology | Cadence Clinic</title>
+    <meta name="description" content="Primary care management of acne vulgaris, eczema, psoriasis, rosacea, and skin cancer screening — with evidence-based topical therapies and dermatology referral when indicated. Cadence Clinic — direct primary care.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: {
+                            light: '#b59a57', // Muted gold
+                            dark: '#b59a57',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(228, 228, 231, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -8px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- MAIN NAV HEADER -->
+    <header class="w-full glass-nav sticky top-0 z-40 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 group-hover:text-zinc-700 transition">CADENCE</span>
+                <span class="text-3xl sm:text-4xl font-light tracking-tight text-zinc-400">CLINIC</span>
+            </a>
+            <div class="flex items-center space-x-3.5">
+                <a href="index.html#scheduling-portal" class="inline-flex items-center px-4 py-2.5 text-sm font-semibold bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg shadow-sm transition">
+                    Book Appointment
+                </a>
+                <a href="index.html" class="inline-flex items-center space-x-2 px-4 py-2.5 text-sm font-semibold bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-200 rounded-lg shadow-sm transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT HERO -->
+    <main class="flex-grow py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex mb-8 text-xs font-semibold text-zinc-400 uppercase tracking-wider gap-2">
+                <a href="index.html" class="hover:text-zinc-600">Home</a>
+                <span>/</span>
+                <a href="index.html#services" class="hover:text-zinc-600">Services</a>
+                <span>/</span>
+                <span class="text-zinc-800">Skin Health & Dermatology</span>
+            </nav>
+
+            <div class="space-y-8">
+                <!-- Title block -->
+                <div class="space-y-4">
+                    <div class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-zinc-100 text-zinc-700 border border-zinc-200">
+                        <i class="fa-solid fa-wand-magic-sparkles text-accent-light mr-1.5"></i>
+                        <span>Clinical Specialty</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight">
+                        Skin Health & Dermatology
+                    </h1>
+                    <div class="h-0.5 w-20 bg-accent-light"></div>
+                </div>
+
+                <!-- Description Card -->
+                <div class="glass-card p-8 sm:p-10 rounded-2xl space-y-6">
+                    <h2 class="text-xl font-bold text-zinc-900">Program Overview</h2>
+                    <p class="text-zinc-600 font-light leading-relaxed text-base sm:text-lg">
+                        Dermatologic conditions are commonly managed in the primary care setting. We evaluate and treat acne vulgaris, eczema (atopic dermatitis), psoriasis, rosacea, and other common skin conditions.
+                    </p>
+                    <p class="text-zinc-600 font-light leading-relaxed text-base">
+                        For patients seeking medical-grade skin treatments, we offer evidence-based topical therapies including prescription formulations, compounded preparations, and referral for dermatologic procedures when appropriate.
+                    </p>
+                </div>
+
+                <!-- Features/Focus Areas -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                    <div class="glass-card p-6 rounded-xl space-y-3">
+                        <div class="flex items-center gap-2 text-zinc-900 font-bold">
+                            <i class="fa-solid fa-circle-check text-accent-light"></i>
+                            <span>Acne Management</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                            Assessment of acne type and severity, topical and oral prescription therapies, hormonal evaluation in female patients, and advanced systemic therapy consideration for severe or refractory cases.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl space-y-3">
+                        <div class="flex items-center gap-2 text-zinc-900 font-bold">
+                            <i class="fa-solid fa-circle-check text-accent-light"></i>
+                            <span>Eczema & Psoriasis</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                            Diagnosis and ongoing management with topical anti-inflammatory and barrier-repair therapies. Referral for systemic immunomodulatory therapy in moderate-to-severe psoriasis.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl space-y-3">
+                        <div class="flex items-center gap-2 text-zinc-900 font-bold">
+                            <i class="fa-solid fa-circle-check text-accent-light"></i>
+                            <span>Rosacea & Skin Sensitivity</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                            Trigger identification and management with topical metronidazole, azelaic acid, or ivermectin. Avoidance strategies and skincare recommendations.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl space-y-3">
+                        <div class="flex items-center gap-2 text-zinc-900 font-bold">
+                            <i class="fa-solid fa-circle-check text-accent-light"></i>
+                            <span>Skin Cancer Screening & Mole Assessment</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                            Clinical evaluation of suspicious lesions using the ABCDE criteria, with biopsy referral and dermatology coordination for concerning findings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Call to Action Card -->
+                <div class="bg-zinc-900 text-white p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold">Ready to Consult with a Physician?</h3>
+                        <p class="text-sm text-zinc-400 font-light">Consultations are  flat-rate. Virtual care & direct scheduling.</p>
+                    </div>
+                    <a href="index.html#scheduling-portal" class="px-6 py-3.5 bg-white hover:bg-zinc-100 text-zinc-950 font-semibold rounded-xl text-sm transition text-center w-full md:w-auto shrink-0 shadow-lg">
+                        Schedule Online Now
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-zinc-950 text-zinc-500 text-xs border-t border-zinc-900 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center">
+            <p>&copy; 2026 Cadence Clinic LLC. All rights reserved.</p>
+            <p class="text-[10px] text-zinc-650">Medical Disclaimer: The information provided on this website is for educational and informational purposes only and is not medical advice. Consult a healthcare provider before starting any therapy.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

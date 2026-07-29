@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Formulations | Cadence Clinic</title>
+    <meta name="description" content="Physician-directed compounded prescriptions at Cadence Clinic. Custom medication formulations including customized hormone preparations, dermatologic compounds, and topical analgesics prescribed through licensed compounding pharmacies.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: {
+                            light: '#b59a57', // Muted gold
+                            dark: '#b59a57',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(228, 228, 231, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px -8px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- MAIN NAV HEADER -->
+    <header class="w-full glass-nav sticky top-0 z-40 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 group-hover:text-zinc-700 transition">CADENCE</span>
+                <span class="text-3xl sm:text-4xl font-light tracking-tight text-zinc-400">CLINIC</span>
+            </a>
+            <div class="flex items-center space-x-3.5">
+                <a href="index.html#scheduling-portal" class="inline-flex items-center px-4 py-2.5 text-sm font-semibold bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg shadow-sm transition">
+                    Book Appointment
+                </a>
+                <a href="index.html" class="inline-flex items-center space-x-2 px-4 py-2.5 text-sm font-semibold bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-200 rounded-lg shadow-sm transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT HERO -->
+    <main class="flex-grow py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex mb-8 text-xs font-semibold text-zinc-400 uppercase tracking-wider gap-2">
+                <a href="index.html" class="hover:text-zinc-600">Home</a>
+                <span>/</span>
+                <a href="index.html#services" class="hover:text-zinc-600">Services</a>
+                <span>/</span>
+                <span class="text-zinc-800">Custom Formulations</span>
+            </nav>
+
+            <div class="space-y-8">
+                <!-- Title block -->
+                <div class="space-y-4">
+                    <div class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-zinc-100 text-zinc-700 border border-zinc-200">
+                        <i class="fa-solid fa-prescription-bottle-medical text-accent-light mr-1.5"></i>
+                        <span>Clinical Specialty</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight">
+                        Custom Formulations
+                    </h1>
+                    <div class="h-0.5 w-20 bg-accent-light"></div>
+                </div>
+
+                <!-- Description Card -->
+                <div class="glass-card p-8 sm:p-10 rounded-2xl space-y-6">
+                    <h2 class="text-xl font-bold text-zinc-900">Program Overview</h2>
+                    <p class="text-zinc-600 font-light leading-relaxed text-base sm:text-lg">
+                        Compounding pharmacies allow physicians to prescribe customized medication formulations that are not commercially available. This is particularly useful when a patient requires a specific dosage form, combination of ingredients, or needs a medication free of certain excipients or allergens.
+                    </p>
+                    <p class="text-zinc-600 font-light leading-relaxed text-base">
+                        We work directly with licensed compounding pharmacies to ensure quality, consistency, and appropriate clinical oversight of all compounded prescriptions. Each formulation is prescribed based on clinical evaluation, relevant laboratory data, and the patient's documented treatment history.
+                    </p>
+                </div>
+
+                <!-- Detailed Compounding Integration Section -->
+                <div class="glass-card p-8 sm:p-10 rounded-2xl space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        <!-- Compounding Image -->
+                        <div class="md:col-span-5">
+                            <div class="relative rounded-xl overflow-hidden border border-zinc-200 shadow-md">
+                                <img src="images/compounding.png" alt="Compounding Pharmacy" class="w-full h-48 md:h-64 object-cover filter brightness-[0.98]">
+                            </div>
+                        </div>
+                        <!-- Compounding Details -->
+                        <div class="md:col-span-7 space-y-4">
+                            <h3 class="text-xl font-bold text-zinc-900">Working with Compounding Pharmacies</h3>
+                            <p class="text-sm text-zinc-600 font-light leading-relaxed">
+                                Commercial pharmaceuticals are manufactured in standardized dosages and delivery forms. For many patients, these work well. But when a clinical situation calls for a non-standard dose, a specific combination of active ingredients, or a formulation without a particular excipient, compounding is the appropriate solution.
+                            </p>
+                            <p class="text-sm text-zinc-600 font-light leading-relaxed">
+                                All compounded prescriptions from Cadence Clinic are sent to licensed, accredited compounding pharmacies that meet USP standards for sterile and non-sterile preparations. We verify potency testing and review beyond-use dating for each formulation category we prescribe.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Highlighted Features Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-zinc-100">
+                        <div class="space-y-2">
+                            <h4 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Custom Hormone Formulations
+                            </h4>
+                            <p class="text-xs text-zinc-500 font-light leading-relaxed">
+                                Compounded hormone formulations in customized dosages and delivery forms (such as creams, troches, or capsules) prescribed based on the patient's clinical presentation and lab results.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Dermatologic Compounds
+                            </h4>
+                            <p class="text-xs text-zinc-500 font-light leading-relaxed">
+                                Custom topical formulations for acne, hyperpigmentation, scarring, and photoaging. These combine active ingredients at targeted concentrations matched to clinical severity for individual skin care needs.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Pain Management Formulations
+                            </h4>
+                            <p class="text-xs text-zinc-500 font-light leading-relaxed">
+                                Topical analgesic formulations for localized pain management when systemic medications are undesirable or contraindicated.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Specialty & Allergen-Free Medications
+                            </h4>
+                            <p class="text-xs text-zinc-500 font-light leading-relaxed">
+                                Compounded medications for patients with documented allergies to standard inactive ingredients (dyes, gluten, lactose, preservatives), or when a commercial formulation is unavailable or discontinued.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Card -->
+                <div class="bg-zinc-900 text-white p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold">Ready to Consult with a Physician?</h3>
+                        <p class="text-sm text-zinc-400 font-light">Consultations are flat-rate. Virtual care & direct scheduling.</p>
+                    </div>
+                    <a href="index.html#scheduling-portal" class="px-6 py-3.5 bg-white hover:bg-zinc-100 text-zinc-950 font-semibold rounded-xl text-sm transition text-center w-full md:w-auto shrink-0 shadow-lg">
+                        Schedule Online Now
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-zinc-950 text-zinc-500 text-xs border-t border-zinc-900 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-center">
+            <p>&copy; 2026 Cadence Clinic LLC. All rights reserved.</p>
+            <p class="text-[10px] text-zinc-650">Medical Disclaimer: The information provided on this website is for educational and informational purposes only and is not medical advice. Consult a healthcare provider before starting any therapy.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

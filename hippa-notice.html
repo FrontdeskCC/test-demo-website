@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice of Privacy Practices - Cadence Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: #27272a; /* zinc-800 */
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #ffffff;
+        }
+        .header-section {
+            border-bottom: 2px solid #e4e4e7; /* zinc-200 */
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+        .clinic-brand {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-family: var(--font-display);
+            margin-bottom: 16px;
+        }
+        .brand-bold {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.025em;
+            color: #09090b; /* zinc-950 */
+        }
+        .brand-light {
+            font-weight: 300;
+            font-size: 1.25rem;
+            letter-spacing: -0.025em;
+            color: #71717a; /* zinc-500 */
+        }
+        h1 {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #09090b;
+            margin: 0 0 8px 0;
+            line-height: 1.25;
+        }
+        .effective-date {
+            font-size: 0.85rem;
+            color: #71717a;
+            margin-bottom: 16px;
+        }
+        .hipaa-alert-box {
+            background-color: #f4f4f5; /* zinc-100 */
+            border-left: 4px solid #d4d4d8; /* zinc-300 */
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+        h2 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #09090b;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #f4f4f5;
+        }
+        p {
+            font-size: 0.95rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #3f3f46; /* zinc-700 */
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        li {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #3f3f46;
+        }
+        .bullet-title {
+            font-weight: 600;
+            color: #09090b;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #e4e4e7;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            font-weight: 600;
+            color: #09090b;
+            background-color: #fafafa;
+        }
+        .acknowledgement-panel {
+            border: 1px solid #e2e8f0;
+            background: #fafafa;
+            padding: 32px;
+            margin-top: 64px;
+            border-radius: 12px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-family: var(--font-display);
+            margin-bottom: 16px;
+        }
+        .bold-word {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.025em;
+            color: #09090b;
+        }
+        .light-word {
+            font-weight: 300;
+            font-size: 1.1rem;
+            letter-spacing: -0.025em;
+            color: #71717a;
+        }
+        .form-row {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .form-field {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            tracking-wider: 0.05em;
+            color: #71717a;
+            font-weight: 600;
+            margin-bottom: 4px;
+            min-height: 28px;
+            display: flex;
+            align-items: flex-end;
+        }
+        .form-line {
+            border-bottom: 1px solid #a1a1aa;
+            height: 40px;
+            position: relative;
+        }
+        .docusign-anchor {
+            font-family: monospace;
+            font-size: 8px;
+            color: #cbd5e1; /* light grey for hidden anchor text */
+            position: absolute;
+            bottom: 2px;
+            left: 4px;
+            user-select: none;
+        }
+        @media (max-width: 640px) {
+            body {
+                padding: 20px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+        @media print {
+            body {
+                margin: 20px auto;
+                padding: 20px;
+                font-size: 12px;
+            }
+            .header-section {
+                padding-bottom: 12px;
+                margin-bottom: 16px;
+            }
+            .hipaa-alert-box {
+                margin-bottom: 16px;
+                padding: 10px;
+            }
+            h2 {
+                margin-top: 16px;
+                margin-bottom: 8px;
+            }
+            table {
+                margin: 12px 0;
+            }
+            .acknowledgement-panel {
+                margin-top: 48px;
+                padding: 20px;
+            }
+            .form-row {
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="clinic-brand">
+            <span class="brand-bold">CADENCE</span><span class="brand-light">CLINIC</span>
+        </div>
+        <h1>Notice of Privacy Practices</h1>
+        <div class="effective-date">Effective Date: July 1, 2026</div>
+    </div>
+
+    <div class="hipaa-alert-box">
+        THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION. PLEASE REVIEW IT CAREFULLY.
+    </div>
+
+    <h2>1. Treatment, Payment, and Healthcare Operations</h2>
+    <p>
+        Cadence Clinic is committed to protecting your privacy. We may use and disclose your Protected Health Information (PHI) for the following standard clinical and administrative purposes:
+    </p>
+    <ul>
+        <li><span class="bullet-title">For Treatment:</span> We may use and disclose your PHI to provide, coordinate, or manage your healthcare and any related services. This includes disclosure to doctors, nurses, technicians, laboratories, or pharmacists involved in your clinical management.</li>
+        <li><span class="bullet-title">For Payment:</span> We may use and disclose your PHI so that the services you receive may be billed and payment collected from you, an insurance company, or a third party.</li>
+        <li><span class="bullet-title">For Healthcare Operations:</span> We may use and disclose your PHI to support the business operations of the clinic. This includes quality assessment protocols, internal auditing, accreditation, and evaluating the competence of healthcare professionals.</li>
+    </ul>
+
+    <h2>2. Permissible Disclosures Without Your Consent</h2>
+    <ul>
+        <li><span class="bullet-title">Required By Law:</span> When mandate-driven by federal, state, or local judicial and regulatory bodies.</li>
+        <li><span class="bullet-title">Public Health Activities:</span> For controlling disease outbreaks, reporting adverse medication reactions, or notifying public health authorities of potential exposure risk.</li>
+        <li><span class="bullet-title">Abuse or Neglect:</span> Disclosing information to protective services authorities if we reasonably believe a patient is a victim of abuse, neglect, or domestic violence.</li>
+    </ul>
+
+    <h2>3. Uses and Disclosures Requiring Your Written Authorization</h2>
+    <p>
+        For matters outside standard treatment, payment, and operations, your explicit written authorization is mandatory. Specifically, Cadence Clinic will never sell your PHI, utilize your information for marketing purposes, or share psychotherapy notes without your documented, explicit consent. You retain the absolute right to revoke such authorization at any time in writing.
+    </p>
+
+    <h2>4. Your Individual Privacy Rights Regarding Your PHI</h2>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 30%;">Your Right</th>
+                <th style="width: 70%;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Inspect and Copy Records</strong></td>
+                <td>You have the right to inspect and obtain an electronic or paper copy of your medical and billing records. Cadence Clinic will provide access within standard regulatory timelines.</td>
+            </tr>
+            <tr>
+                <td><strong>Request Restrictions</strong></td>
+                <td>You may request that we restrict how we use or disclose your PHI for treatment, payment, or operations. We are not legally bound to agree, except if you pay for a service entirely out-of-pocket and request we do not disclose to your health plan.</td>
+            </tr>
+            <tr>
+                <td><strong>Alternative Communications</strong></td>
+                <td>You can request that we contact you by specific alternative means (e.g., via a specific telehealth secure portal, specific phone number, or confidential email address).</td>
+            </tr>
+            <tr>
+                <td><strong>Amend Your Record</strong></td>
+                <td>If you feel the health information we possess is incorrect or incomplete, you may request a formal amendment in writing, stating your rationale.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="acknowledgement-panel">
+        <div class="brand-logo"><span class="bold-word">CADENCE</span><span class="light-word">CLINIC</span></div>
+        <h1 style="font-size: 13pt; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-bottom: 15px;">Patient Acknowledgement of Receipt</h1>
+        <p style="font-size: 9.5pt;">
+            By signing below, I acknowledge that I have been presented with, read, and fully understand the Notice of Privacy Practices for Cadence Clinic Medical Group, which outlines how my Protected Health Information (PHI) may be utilized, accessed, and disclosed under federal law.
+        </p>
+
+        <div class="form-row" style="margin-top: 45px;">
+            <div class="form-field" style="flex: 2;">
+                <div class="form-label">Patient Full Name (Printed)</div>
+                <div class="form-line">
+                    <span class="docusign-anchor">\n1\</span>
+                </div>
+            </div>
+            <div class="form-field" style="flex: 1;">
+                <div class="form-label">Date of Birth</div>
+                <div class="form-line">
+                    <span class="docusign-anchor">\dob1\</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-field" style="flex: 2;">
+                <div class="form-label">Patient or Authorized Representative Signature</div>
+                <div class="form-line">
+                    <span class="docusign-anchor">\s1\</span>
+                </div>
+            </div>
+            <div class="form-field" style="flex: 1;">
+                <div class="form-label">Date Signed</div>
+                <div class="form-line">
+                    <span class="docusign-anchor">\d1\</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

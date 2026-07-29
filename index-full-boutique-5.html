@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadence Clinic Medical Group | Direct Primary Care & Wellness</title>
+    <meta name="description" content="Direct-access digital medicine in sync with your health. Flat-rate direct primary care, specialized wellness, and compounding pharmacy partnerships. Book your appointment today.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: {
+                            light: '#b59a57', // Muted luxurious gold
+                            dark: '#b59a57',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(228, 228, 231, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(0,0,0,0.05);
+        }
+        a.glass-card { text-decoration: none; color: inherit; }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-800 font-sans antialiased">
+
+    <!-- TOP PROMO BANNER -->
+    <div id="promo-banner" class="bg-zinc-900 text-zinc-100 py-2.5 px-4 text-center text-sm font-medium relative z-50 flex items-center justify-center gap-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-accent-light/20 text-accent-light">
+            Now Accepting Patients
+        </span>
+        <span>See a board-certified physician today — streamlined scheduling, no unnecessary delays.</span>
+        <a href="#scheduling-portal" class="inline-flex items-center gap-1.5 ml-2 px-4 py-1.5 bg-white text-zinc-900 font-semibold rounded-lg text-xs hover:bg-zinc-100 transition">
+            Book Your Appointment <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+    </div>
+
+    <!-- MAIN NAV HEADER -->
+    <header class="sticky top-0 z-40 w-full glass-nav transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo (Larger) -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 group-hover:text-zinc-700 transition duration-300">CADENCE</span>
+                <span class="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-zinc-400">CLINIC</span>
+            </a>
+
+            <!-- Desktop Nav Links (Slightly Larger & Arranged Appropriately) -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-zinc-600 tracking-wide uppercase">
+                <a href="#services" class="hover:text-zinc-900 transition">Services</a>
+                <a href="#scheduling-portal" class="hover:text-zinc-900 transition">Scheduling</a>
+                <a href="#faq" class="hover:text-zinc-900 transition">FAQ</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-3.5">
+                <!-- Book Your Appointment Button -->
+                <a href="#scheduling-portal" class="hidden sm:inline-flex items-center px-4 py-2.5 text-sm font-semibold bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg shadow-sm transition transform hover:scale-[1.02]">
+                    <span>Book Your Appointment</span>
+                </a>
+                <!-- Patient Portal Direct Button -->
+                <button onclick="openPortalModal()" class="hidden sm:inline-flex items-center space-x-2 px-4 py-2.5 text-sm font-semibold bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-200 rounded-lg shadow-sm transition transform hover:scale-[1.02]">
+                    <i class="fa-solid fa-user-shield text-zinc-500"></i>
+                    <span>Patient Portal</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-zinc-600 hover:bg-zinc-100 focus:outline-none">
+                    <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-200 bg-white px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-semibold text-zinc-700 hover:bg-zinc-50 uppercase tracking-wide">Services</a>
+            <a href="#scheduling-portal" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-semibold text-zinc-700 hover:bg-zinc-50 uppercase tracking-wide">Scheduling</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-sm font-semibold text-zinc-700 hover:bg-zinc-50 uppercase tracking-wide">FAQ</a>
+            <hr class="border-zinc-200">
+            <!-- Book Your Appointment Button -->
+            <a href="#scheduling-portal" onclick="toggleMobileMenu()" class="w-full flex items-center justify-center px-4 py-3 bg-zinc-900 text-white rounded-lg text-sm font-semibold shadow-sm">
+                <span>Book Your Appointment</span>
+            </a>
+            <!-- Patient Portal Button -->
+            <button onclick="toggleMobileMenu(); openPortalModal()" class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-white text-zinc-800 border border-zinc-200 rounded-lg text-sm font-semibold shadow-sm">
+                <i class="fa-solid fa-user-shield text-zinc-500"></i>
+                <span>Patient Portal</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-16 pb-24 overflow-hidden border-b border-zinc-200/80">
+        <!-- Subtle Background Gradients -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-zinc-200/30 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-zinc-300/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Left Content Column -->
+                <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-zinc-100 text-zinc-700 border border-zinc-200">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span>Accepting New Patients</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-zinc-900 leading-[1.15]">
+                        See a Board-Certified Physician Today
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-zinc-500 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Direct primary care designed around you — streamlined scheduling, transparent pricing, and meaningful appointments without the traditional wait or the surprise bills.
+                    </p>
+
+                    <p class="text-sm text-zinc-400 italic max-w-xl mx-auto lg:mx-0">
+                        Medicine in sync with your health.
+                    </p>
+
+                    <!-- Features Highlights Group -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 pt-1">
+                        <div class="flex items-center space-x-2 text-zinc-600">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center border border-zinc-200/60">
+                                <i class="fa-solid fa-bolt text-zinc-500"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium">Direct Scheduling</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-zinc-600">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center border border-zinc-200/60">
+                                <i class="fa-solid fa-tag text-zinc-500"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium">Transparent Pricing</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-zinc-600 col-span-2 sm:col-span-1 justify-center sm:justify-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center border border-zinc-200/60">
+                                <i class="fa-solid fa-prescription-bottle-medical text-zinc-500"></i>
+                            </div>
+                            <span class="text-xs sm:text-sm font-medium">Custom Formulations</span>
+                        </div>
+                    </div>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#scheduling-portal" class="w-full sm:w-auto text-center px-8 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                            Book Your Appointment
+                        </a>
+                        <a href="#services" class="w-full sm:w-auto text-center px-8 py-3.5 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold rounded-xl border border-zinc-200 transition">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Column (Premium Lobby Image) -->
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md sm:max-w-lg lg:max-w-none">
+                        <!-- Main Lobby Image -->
+                        <div class="relative rounded-2xl overflow-hidden border border-zinc-200/80 shadow-2xl bg-zinc-100">
+                            <img src="images/hero.png" alt="Cadence Clinic Direct Primary Care" class="w-full h-[400px] lg:h-[480px] object-cover filter brightness-[0.97] transition duration-300">
+                            <!-- Gradient Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent"></div>
+                        </div>
+
+                        <!-- Floating Badge: Flat Rate -->
+                        <div class="absolute -bottom-5 -left-5 bg-white border border-zinc-200 p-4 rounded-xl shadow-lg max-w-[200px] flex items-center space-x-3">
+                            <div class="p-2.5 bg-zinc-100 rounded-lg text-zinc-600">
+                                <i class="fa-solid fa-dollar-sign text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-zinc-400 uppercase tracking-wider font-semibold">Flat Rate</p>
+                                <p class="text-lg font-bold text-zinc-900">$140 <span class="text-xs font-normal text-zinc-400">/visit</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION STATEMENT SECTION -->
+    <section class="py-20 bg-zinc-100 border-b border-zinc-200/80">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <span class="text-xs font-bold tracking-widest text-accent-light uppercase block">Our Mission</span>
+            <div class="h-0.5 w-16 bg-accent-light mx-auto"></div>
+            <p class="text-base sm:text-lg text-zinc-600 font-light leading-relaxed">
+                At <span class="font-extrabold text-zinc-900">CADENCE</span> <span class="font-light text-zinc-400">CLINIC</span>, we are building a new standard in digital medicine — one that puts the doctor-patient relationship first. While the industry trends toward fragmented, single-issue platforms, we take the opposite approach. Technology should deepen your connection to your physician, not replace it. Our product is the patient encounter itself: direct primary care delivered in the most efficient and meaningful way possible, in sync with the cadence of your life.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHY CADENCE / PROVIDERS SECTION -->
+    <section class="py-20 bg-white border-b border-zinc-200/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: What is Cadence Clinic -->
+                <div class="space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-accent-light border border-zinc-200">
+                        <i class="fa-solid fa-house-medical text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-900">What is Cadence Clinic?</h3>
+                    <p class="text-sm text-zinc-500 font-light leading-relaxed">
+                        We deliver efficient, patient-centered telehealth primary care. Whether you need a one-time consultation or ongoing management for chronic conditions, our mission is to remove traditional barriers to healthcare. We make it easy to access high-quality medical providers followed by a system designed to optimize your health, vitality, and longevity.
+                    </p>
+                </div>
+
+                <!-- Card 2: Why Cadence Clinic -->
+                <div class="space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-accent-light border border-zinc-200">
+                        <i class="fa-solid fa-clock text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-900">Why Cadence Clinic?</h3>
+                    <p class="text-sm text-zinc-500 font-light leading-relaxed">
+                        Exceptional medicine shouldn't be high-friction. We deliver evidence-based care tailored to your life, respecting your time, budget, and priorities — with streamlined scheduling, prompt communication, and no unnecessary delays.
+                    </p>
+                </div>
+
+                <!-- Card 3: Our Providers -->
+                <div class="space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-accent-light border border-zinc-200">
+                        <i class="fa-solid fa-user-doctor text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-zinc-900">Our Providers</h3>
+                    <p class="text-sm text-zinc-500 font-light leading-relaxed">
+                        Our clinical team consists of board-certified primary care physicians holding active medical licenses in your state. Your provider's credentials, biography, and licensing details will be sent to you immediately after scheduling an appointment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLINICAL SERVICES SECTION (13 Services in Grid) -->
+    <section id="services" class="py-24 bg-zinc-50 border-b border-zinc-200/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold tracking-widest text-accent-light uppercase">Clinical Scope</h2>
+                <p class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">Clinical Services Offered</p>
+                <p class="text-zinc-500 font-light text-sm sm:text-base">
+                    Our digital clinic covers a wide range of primary care, metabolic, preventative, and specialized medical needs.
+                </p>
+            </div>
+
+            <!-- Services Grid (13 columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Men's Health -->
+                <a href="services/mens-health.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-mars text-lg text-blue-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Men’s Health</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Proactive care for vibrant aging. We address hormone imbalances, low testosterone, hair loss, bone density, erectile dysfunction, and sexual health.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+                              <!-- Service 2: Women's Health -->
+                <a href="services/womens-health.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-venus text-lg text-pink-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Women's Health</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Comprehensive support through every stage of life. Specialized care for perimenopause and menopause utilizing both hormonal and non-hormonal therapies, alongside treatments for bone density loss, osteoporosis, and sexual wellness.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 3: Weight Loss & Metabolic Health -->
+                <a href="services/weight-loss-metabolic-health.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-weight-scale text-lg text-accent-light"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Weight Loss & Metabolic Health</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            A holistic approach to sustainable weight management. We evaluate metabolism, hormones, sleep, stress, and nutrition, incorporating advanced options like GLP-1 receptor agonist medications when clinically indicated.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 4: Longevity & Biomarker Optimization -->
+                <a href="services/longevity-biomarker-optimization.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-dna text-lg text-teal-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Longevity & Biomarker Optimization</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Proactive health optimization using comprehensive biomarker tracking, advanced lab panels, and personalized lifestyle and supplement protocols designed to maximize your healthspan.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 5: Cardiovascular Health -->
+                <a href="services/cardiovascular-health.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-heart-pulse text-lg text-red-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Cardiovascular Health</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Strategic prevention and management to protect your heart. We offer comprehensive treatment plans, blood pressure optimization, advanced lipid analysis, and personalized cardiovascular risk-reduction strategies.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 6: Anxiety & Depression -->
+                <a href="services/anxiety-depression.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-brain text-lg text-indigo-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Anxiety & Depression</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Compassionate, evidence-based mental health support. We provide dedicated care for anxiety and depression through supportive clinical evaluations, lifestyle modifications, and precise medication management to help you regain balance and peace of mind.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 7: Migraine & Headache Management -->
+                <a href="services/migraine-headache.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-head-side-virus text-lg text-amber-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Migraine & Headache Management</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Comprehensive diagnostic review and advanced treatment plans—including modern preventative and abortive therapies—to significantly reduce the frequency and severity of chronic headaches.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 8: Sleep Medicine & Insomnia -->
+                <a href="services/sleep-medicine.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-moon text-lg text-purple-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Sleep Medicine & Insomnia</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Clinical management for sleep disturbances, fatigue, and circadian rhythm disorders using evidence-based behavioral strategies and targeted medical therapies to restore restorative rest.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 9: Endocrine Disorders -->
+                <a href="services/endocrine-disorders.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-droplet text-lg text-cyan-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Endocrine Disorders</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Targeted management for hormonal health, including precise diagnosis and long-term care optimization for thyroid conditions and diabetes.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 10: Gastrointestinal & Digestive Health -->
+                <a href="services/gastrointestinal-health.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-apple-whole text-lg text-orange-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Gastrointestinal & Digestive Health</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Specialized care for chronic irritable bowel syndrome (IBS), acid reflux (GERD), and food intolerances through targeted nutritional guidance and medical management.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 11: Skin Health & Rejuvenation -->
+                <a href="services/skin-health.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-wand-magic-sparkles text-lg text-accent-light"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Skin Health & Rejuvenation</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Clinical dermatological care to restore and maintain skin vitality, including targeted treatments for acne, psoriasis, scarring, and medically supervised skin rejuvenation.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 12: Allergy & Asthma Management -->
+                <a href="services/allergy-asthma.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-wind text-lg text-sky-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Allergy & Asthma Management</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Ongoing management and optimized control of environmental allergies, seasonal rhinitis, and mild-to-moderate asthma to improve your daily quality of life.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+                <!-- Service 13: Custom Formulations -->
+                <a href="services/custom-formulations.html" class="glass-card p-8 rounded-2xl space-y-4 flex flex-col justify-between group cursor-pointer">
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-prescription-bottle-medical text-lg text-emerald-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-zinc-900">Custom Formulations</h3>
+                        <p class="text-xs sm:text-sm text-zinc-555 font-light leading-relaxed">
+                            Through partnerships with compounding pharmacies, we can prescribe customized, novel medication formulations tailored specifically to your unique needs and preferences.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-semibold text-accent-light group-hover:gap-2 transition-all mt-2">Learn More <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="py-24 bg-white border-b border-zinc-200/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-bold tracking-widest text-accent-light uppercase block">Seamless Telehealth</span>
+                <h2 class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">How It Works</h2>
+                <p class="text-sm text-zinc-500 font-light max-w-lg mx-auto">
+                    Starting your customized healthcare journey is straightforward, fully virtual, and HIPAA-secure.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1: Book -->
+                <div class="text-center space-y-3 p-4">
+                    <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
+                        <i class="fa-solid fa-calendar-days text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-zinc-900">1. Book Your Appointment</h3>
+                    <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        Choose an available time on our online calendar below. You will receive a confirmation link with your doctor’s information via email.
+                    </p>
+                </div>
+
+                <!-- Step 2: Complete -->
+                <div class="text-center space-y-3 p-4">
+                    <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
+                        <i class="fa-solid fa-file-signature text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-zinc-900">2. Complete</h3>
+                    <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        Submit your pre-appointment documentation and payment via our secure portal.
+                    </p>
+                </div>
+
+                <!-- Step 3: Connect -->
+                <div class="text-center space-y-3 p-4">
+                    <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
+                        <i class="fa-solid fa-video text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-zinc-900">3. Connect</h3>
+                    <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        Click the secure telehealth link sent directly to your email at your scheduled time.
+                    </p>
+                </div>
+
+                <!-- Step 4: Thrive -->
+                <div class="text-center space-y-3 p-4">
+                    <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
+                        <i class="fa-solid fa-heart-circle-check text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-zinc-900">4. Thrive</h3>
+                    <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        Following your visit, all prescriptions will be sent immediately to your preferred pharmacy. You will receive a comprehensive care summary that will include any forms needed for labs, imaging, or other tests.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPOUNDING PHARMACY DETAIL SECTION -->
+    <section id="compounding" class="py-24 bg-zinc-50 border-b border-zinc-200/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Compounding Image -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-zinc-200 shadow-xl bg-zinc-50">
+                        <img src="images/compounding.png" alt="Specialized Medical Compounding Apothecary" class="w-full h-[350px] lg:h-[450px] object-cover filter brightness-[0.98] transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/50 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-xs uppercase tracking-wider font-semibold text-accent-light">Compounded Formulations</p>
+                            <h4 class="text-lg font-sans font-semibold">Tailored Medication Strengths</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Details on Compounding Pharmacy -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold tracking-widest text-accent-light uppercase flex items-center gap-2">
+                        <i class="fa-solid fa-prescription-bottle-medical"></i> Personalized Therapeutics
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900 leading-tight">
+                        Working with Specialized Compounding Pharmacies
+                    </h2>
+                    <p class="text-zinc-500 font-light leading-relaxed">
+                        Every patient's biology is unique. Standard, commercial mass-produced pharmaceuticals often come in fixed dosages and with fillers that may cause side effects or allergies. 
+                    </p>
+                    <p class="text-zinc-500 font-light leading-relaxed">
+                        At Cadence Clinic, we collaborate with premier compounding pharmacies to design and formulate custom prescriptions. This customized medical pharmacy approach allows us to:
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                        <div class="space-y-2">
+                            <h5 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Custom Strengths & Dosages
+                            </h5>
+                            <p class="text-xs text-zinc-500 font-light">
+                                Adjusting active ingredient levels specifically to your blood lab numbers, minimizing side effects and optimizing efficacy.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Combined Formulations
+                            </h5>
+                            <p class="text-xs text-zinc-500 font-light">
+                                Blending multiple compatible active medications into a single pill, cream, or sublingual troche for convenience.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Hypoallergenic Formulations
+                            </h5>
+                            <p class="text-xs text-zinc-500 font-light">
+                                Removing undesirable excipients, dyes, gluten, lactose, or preservatives to accommodate sensitive individuals.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h5 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-accent-light"></span> Specialized Delivery Methods
+                            </h5>
+                            <p class="text-xs text-zinc-500 font-light">
+                                Transforming medications from hard-to-swallow pills into topical transdermal gels, oral liquids, or sublingual options.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSPARENT PRICING & VALUE ADD SECTION -->
+    <section id="pricing" class="py-24 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold tracking-widest text-accent-light uppercase">Cost Transparency</h2>
+                <p class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">Simple Pricing, Direct Value</p>
+                <p class="text-zinc-500 font-light text-sm sm:text-base">
+                    Healthcare should not be a guessing game. We offer transparent pricing structures with discount partner benefits so you always know exactly what you are paying.
+                </p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Card 1: Cash Appointment -->
+                <div class="glass-card p-8 rounded-2xl border-zinc-300 flex flex-col justify-between space-y-8 relative overflow-hidden">
+                    <div class="space-y-6">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-zinc-150 text-xs font-semibold text-zinc-700 uppercase tracking-wide mb-3">Direct Access</span>
+                            <h3 class="text-2xl font-sans font-bold text-zinc-900">Cash Consultation</h3>
+                            <p class="text-xs text-zinc-400 font-light mt-1">Flat-rate visit, no insurance required</p>
+                        </div>
+                        
+                        <div class="flex items-baseline">
+                            <span class="text-5xl font-extrabold text-zinc-900 tracking-tight">$140</span>
+                            <span class="text-zinc-455 text-sm ml-2">/ appointment</span>
+                        </div>
+
+                        <hr class="border-zinc-200">
+
+                        <ul class="space-y-4 text-sm text-zinc-500">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span>Complete clinical evaluation with physician</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span>Urgent issues or standard medication refills</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span>No surprise bills or hidden facility fees</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span>Work directly with compounding pharmacies</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#scheduling-portal" class="w-full text-center py-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl text-sm transition shadow-md block transform hover:-translate-y-0.5">
+                        Book Your Appointment
+                    </a>
+                </div>
+
+                <!-- Card 2: Partner Discounts & Benefits -->
+                <div class="glass-card p-8 rounded-2xl border-accent-light/35 flex flex-col justify-between space-y-8 relative overflow-hidden lg:scale-[1.03] shadow-lg">
+                    <!-- Recommended Glow Accent -->
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-accent-light/10 rounded-full blur-xl"></div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-accent-light/10 text-accent-light text-xs font-bold uppercase tracking-wide mb-3">Partner Benefits</span>
+                            <h3 class="text-2xl font-sans font-bold text-zinc-900">Cash-Pay Savings</h3>
+                            <p class="text-xs text-zinc-400 font-light mt-1">Exclusive out-of-pocket savings network</p>
+                        </div>
+                        
+                        <div class="flex items-baseline">
+                            <span class="text-2xl font-bold text-zinc-900">Up to 80% Off</span>
+                            <span class="text-zinc-450 text-xs ml-2">imaging & pharmacy</span>
+                        </div>
+
+                        <hr class="border-zinc-200">
+
+                        <ul class="space-y-4 text-sm text-zinc-500">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span><strong>Imaging Discounts:</strong> Massive savings on MRIs, CT scans, and X-Rays via local partner diagnostic centers when paid cash.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span><strong>Pharmacy Discounts:</strong> Partner pharmacy network discounts on standard formulations.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                <span><strong>Lab Fee Reductions:</strong> Heavily discounted commercial blood panels, thyroid assays, and hormone panels.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#scheduling-portal" class="w-full text-center py-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl text-sm transition shadow-md block transform hover:-translate-y-0.5">
+                        Book Your Appointment
+                    </a>
+                </div>
+
+                <!-- Card 3: Insurance Information -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between space-y-8 relative overflow-hidden">
+                    <div class="space-y-6">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-zinc-100 text-xs font-semibold text-zinc-700 uppercase tracking-wide mb-3">Insurance Update</span>
+                            <h3 class="text-2xl font-sans font-semibold text-zinc-900">Coverage & Payment</h3>
+                            <p class="text-xs text-zinc-400 font-light mt-1">Transparent out-of-pocket pricing</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-xl bg-zinc-100 border border-zinc-200">
+                                <p class="text-xs font-semibold text-zinc-900 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-shield-halved text-accent-light"></i> Insurance Status
+                                </p>
+                                <p class="text-xs text-zinc-500 font-light leading-relaxed">
+                                    We are currently operating on a cash-pay, out-of-pocket basis. <strong>However, we are in the credentialing process and will be accepting major insurance plans soon.</strong>
+                                </p>
+                            </div>
+                            <ul class="space-y-3.5 text-sm text-zinc-500">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                    <span>Simple, flat-rate appointment pricing</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                    <span>No hidden fees or surprise charges</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-check text-accent-light mt-0.5"></i>
+                                    <span>Superbill provided for insurance reimbursement</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#scheduling-portal" class="w-full text-center py-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl text-sm transition shadow-md block transform hover:-translate-y-0.5">
+                        Book Your Appointment
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULING & BOOKING PORTAL -->
+    <section id="scheduling-portal" class="py-24 bg-zinc-100 border-t border-b border-zinc-200 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+                
+                <!-- Left Text Column: Booking details -->
+                <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+                    <span class="text-xs font-bold tracking-widest text-accent-light uppercase flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Online Scheduling
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">
+                        Book Your Appointment
+                    </h2>
+                    <p class="text-zinc-500 font-light leading-relaxed">
+                        Scheduling your visit is fast and straightforward. Choose your service, pick a time that works for you, and you’re all set — no phone calls needed.
+                    </p>
+                    <p class="text-zinc-500 font-light leading-relaxed">
+                        After booking, you’ll receive a secure link to complete your intake forms, communicate with your physician, access diagnostic reports, and manage prescriptions through your patient portal.
+                    </p>
+
+                    <div class="p-5 rounded-xl border border-zinc-200 bg-white space-y-4">
+                        <h4 class="text-sm font-semibold text-zinc-800 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-question text-accent-light"></i> How It Works:
+                        </h4>
+                        <ol class="list-decimal list-inside space-y-2.5 text-xs text-zinc-500 font-light">
+                            <li>Select your service type below.</li>
+                            <li>Choose an available appointment slot.</li>
+                            <li>Complete the booking details.</li>
+                            <li>You will receive a secure link to complete your patient portal registration and intake forms.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Developer info toggle -->
+                    <div class="rounded-xl border border-dashed border-zinc-300 p-4">
+                        <button onclick="toggleDeveloperPanel()" class="flex items-center justify-between w-full text-xs font-semibold text-zinc-600 hover:text-zinc-900 transition">
+                            <span><i class="fa-solid fa-code mr-1"></i> Doctor / Developer Instructions</span>
+                            <i id="dev-chevron" class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div id="developer-panel" class="hidden mt-3 text-[11px] text-zinc-500 font-light space-y-2 pt-2 border-t border-zinc-200">
+                            <p>This section accommodates your EHR's direct widget scheduling link. To integrate your scheduling widget:</p>
+                            <code class="block p-2 rounded bg-zinc-200 font-mono text-[10px] break-all overflow-x-auto text-zinc-700">
+                                &lt;!-- Replace mock scheduler with your EHR scheduling widget --&gt;<br>
+                                &lt;iframe src="YOUR_EHR_SCHEDULING_URL" width="100%" height="600" frameborder="0"&gt;&lt;/iframe&gt;
+                            </code>
+                            <p class="italic text-[10px]">Simply edit the HTML file and insert your EHR-provided scheduling code block in the marked placeholders.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Charm Health Scheduling Widget -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-2xl border border-zinc-200 shadow-xl overflow-hidden">
+                        
+                        <!-- Header -->
+                        <div class="px-6 py-4 bg-zinc-900 text-white border-b border-zinc-800/80 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                <span class="text-xs uppercase tracking-widest font-semibold text-zinc-400">Appointment Scheduler</span>
+                            </div>
+                            <span class="text-xs bg-zinc-800 px-2.5 py-1 rounded text-zinc-450 border border-zinc-750">Secure HIPAA Portal</span>
+                        </div>
+
+                        <!-- Charm Health Embedded Calendar -->
+                        <div class="w-full">
+                            <iframe 
+                                width="100%" 
+                                height="1000" 
+                                src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=cbe558b0bfeef557fc4fe6b58c306d92d9c2034a58b739ccbca37d8352ecf1526ee57013c1a537e6b4b1c2f1f0c5e3f6a0ae868b6eb0918a" 
+                                style="overflow:hidden; display:block; border:none;" 
+                                frameborder="0"
+                                title="Cadence Clinic Online Appointment Scheduler"
+                                loading="lazy"
+                            ></iframe>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-xs font-bold tracking-widest text-accent-light uppercase">Help & Guidance</h2>
+                <p class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">Frequently Asked Questions</p>
+                <p class="text-zinc-500 font-light text-sm sm:text-base">
+                    Find answers regarding our virtual consultations, out-of-pocket pricing, and onboarding policies.
+                </p>
+            </div>
+
+            <!-- FAQ Accordion Container -->
+            <div class="space-y-4">
+                
+                <!-- FAQ 1 -->
+                <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold text-sm sm:text-base text-zinc-800 flex items-center justify-between focus:outline-none hover:bg-zinc-50 transition">
+                        <span>Is this care fully virtual?</span>
+                        <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 border-t border-zinc-150 text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        Yes. We conduct all consultations via secure, HIPAA-compliant telehealth portals, allowing you to meet with your provider from the comfort of your home or office. If an in-person evaluation or physical care is required, we will promptly refer you to a partner clinic or trusted provider within your local area.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold text-sm sm:text-base text-zinc-800 flex items-center justify-between focus:outline-none hover:bg-zinc-50 transition">
+                        <span>Do you accept insurance?</span>
+                        <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 border-t border-zinc-150 text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        We are currently a cash-only practice. 
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold text-sm sm:text-base text-zinc-800 flex items-center justify-between focus:outline-none hover:bg-zinc-50 transition">
+                        <span>What do I need to establish as a new patient?</span>
+                        <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 border-t border-zinc-150 text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        Please have a government-issued photo ID, an accurate list of your current medications, and any recent laboratory results or relevant medical records available.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white">
+                    <button class="faq-toggle w-full p-6 text-left font-semibold text-sm sm:text-base text-zinc-800 flex items-center justify-between focus:outline-none hover:bg-zinc-50 transition">
+                        <span>How do I manage my appointments?</span>
+                        <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 pt-0 border-t border-zinc-150 text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
+                        All scheduling, rescheduling, and communication can be handled promptly and directly through our secure online booking portal or via email.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / QUICK QUESTIONS FOOTER BANNER -->
+    <section class="py-16 bg-zinc-900 text-zinc-100 border-t border-zinc-800/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-3">
+                    <h3 class="text-2xl font-sans font-bold text-white">Have a Specific Health Question?</h3>
+                    <p class="text-sm text-zinc-400 font-light">
+                        Speak directly with the clinic administration to learn about compounding capabilities, scheduling availability, or our patient portal.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 md:justify-end">
+                    <a href="mailto:Frontdesk@Cadence-Clinic.com" class="px-6 py-3.5 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl text-sm font-semibold border border-zinc-700 transition text-center">
+                        <i class="fa-regular fa-envelope mr-1.5"></i> Email Clinic
+                    </a>
+                    <a href="tel:+18001111111" class="px-6 py-3.5 bg-white hover:bg-zinc-100 text-zinc-950 rounded-xl text-sm font-semibold transition text-center">
+                        <i class="fa-solid fa-phone mr-1.5"></i> Call 800-111-1111
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-zinc-950 text-zinc-500 text-xs border-t border-zinc-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <!-- Branding -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center space-x-1">
+                        <span class="text-lg font-bold tracking-tight text-white">CADENCE</span>
+                        <span class="text-lg font-light tracking-tight text-zinc-500">CLINIC</span>
+                    </div>
+                    <p class="text-zinc-550 font-light max-w-sm">
+                        Direct Primary Care & Wellness. Personalized medicine designed around you.
+                    </p>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div class="flex flex-wrap gap-x-8 gap-y-4">
+                    <a href="#services" class="hover:text-white transition">Services</a>
+                    <a href="#scheduling-portal" class="hover:text-white transition">Scheduling</a>
+                    <a href="#faq" class="hover:text-white transition">FAQ</a>
+                    <a href="#" onclick="openPortalModal(); return false;" class="hover:text-white transition font-medium text-accent-light">Patient Portal Login</a>
+                </div>
+            </div>
+
+            <hr class="border-zinc-900">
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-[11px] text-zinc-500 font-light">
+                <p>&copy; 2026 Cadence Clinic LLC. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:underline">HIPAA Disclosure</a>
+                </div>
+            </div>
+
+            <!-- Medical Disclaimer -->
+            <div class="text-[10px] text-zinc-600 font-light leading-relaxed border-t border-zinc-900 pt-6">
+                <strong>Medical Disclaimer:</strong> The information provided on this website is for educational and informational purposes only and is not intended as medical advice. Please consult with a licensed physician or medical professional before making any health decisions, modifying hormone therapies, or taking custom compounded formulations. Compounded formulations are prepared by specialized licensed pharmacies and are customized for individual clinical specifications under direct physician supervision.
+            </div>
+        </div>
+    </footer>
+
+    <!-- PATIENT PORTAL LOGIN MODAL -->
+    <div id="portal-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-sm transition-all duration-300">
+        <div class="bg-white rounded-2xl border border-zinc-200 shadow-2xl w-full max-w-md overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="portal-modal-card">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 bg-zinc-900 text-white border-b border-zinc-800/80 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-user-shield text-emerald-500"></i>
+                    <span class="text-xs uppercase tracking-widest font-semibold text-zinc-400">Secure Patient Portal</span>
+                </div>
+                <button onclick="closePortalModal()" class="text-zinc-400 hover:text-white transition focus:outline-none">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content / Mock Login -->
+            <div class="p-6 sm:p-8 space-y-6">
+                <div class="text-center space-y-2">
+                    <h3 class="text-lg font-semibold text-zinc-900">Access Patient Portal</h3>
+                    <p class="text-xs text-zinc-500 font-light">
+                        Log in to message your doctor, view lab results, check prescriptions, or pay bills.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-zinc-550 mb-1.5">Portal Email / Username</label>
+                        <input type="text" placeholder="patient@example.com" class="w-full px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-accent-light">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="block text-xs font-semibold text-zinc-550">Password</label>
+                            <a href="#" class="text-[10px] text-accent-light hover:underline">Forgot password?</a>
+                        </div>
+                        <input type="password" placeholder="••••••••" class="w-full px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm focus:outline-none focus:border-accent-light">
+                    </div>
+                </div>
+
+                <button onclick="simulatePortalLogin()" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-sm transition shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-lock"></i> Secure Login
+                </button>
+
+                <div class="text-center">
+                    <p class="text-xs text-zinc-500 font-light">
+                        New patient? <a href="#scheduling-portal" onclick="closePortalModal()" class="text-accent-light hover:underline font-semibold">Book an appointment</a> first to receive your registration invite.
+                    </p>
+                </div>
+
+                <!-- Dev placeholder info -->
+                <div class="p-3 bg-zinc-50 border border-dashed border-zinc-200 rounded-lg text-[10px] text-zinc-550 font-light">
+                    <p class="font-bold mb-1"><i class="fa-solid fa-circle-info"></i> Developer EHR Note:</p>
+                    <p>In production, this button routes patients to your specific patient portal login page.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MAIN JAVASCRIPT FOR WIDGETS & INTERACTIONS -->
+    <script>
+        // MOBILE MENU
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.className = "fa-solid fa-xmark text-xl";
+            } else {
+                menu.classList.add('hidden');
+                icon.className = "fa-solid fa-bars text-xl";
+            }
+        }
+
+        // FAQ ACCORDIONS
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                const isOpen = !content.classList.contains('hidden');
+                
+                // Close all FAQ first
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-toggle i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+
+
+
+        // PATIENT PORTAL MODAL ACTIONS
+        function openPortalModal() {
+            const modal = document.getElementById('portal-modal');
+            const card = document.getElementById('portal-modal-card');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        // Close portal modal
+        function closePortalModal() {
+            const modal = document.getElementById('portal-modal');
+            const card = document.getElementById('portal-modal-card');
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function simulatePortalLogin() {
+            alert("Connecting to your secure patient portal. In production, this will redirect you to your patient portal login page.");
+            closePortalModal();
+        }
+
+        // DEVELOPER DETAILS PANEL TOGGLE
+        function toggleDeveloperPanel() {
+            const panel = document.getElementById('developer-panel');
+            const chevron = document.getElementById('dev-chevron');
+            if (panel.classList.contains('hidden')) {
+                panel.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                panel.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
+

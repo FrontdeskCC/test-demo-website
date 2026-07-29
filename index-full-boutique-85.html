@@ -5,7 +5,8 @@
     <!-- Removed for production -->
     <!-- Passcode Protection -->
     <!-- Removed for production -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadence Clinic Medical Group | Direct Primary Care & Wellness</title>
     <meta name="description" content="Direct-access digital medicine in sync with your health. Flat-rate direct primary care, specialized wellness, and compounding pharmacy partnerships. Book your appointment today.">
     <!-- Google Fonts -->
@@ -34,36 +35,11 @@
         }
     </script>
     <style>
-        /* Mobile & Cross-Device Reset Layer */
-        html {
-            -webkit-text-size-adjust: 100%;
-            touch-action: manipulation;
-        }
-        body {
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .safe-pb {
-            padding-bottom: env(safe-area-inset-bottom, 0px);
-        }
         .glass-nav {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(228, 228, 231, 0.6);
-        }
-        /* Thin gold accent line under the nav for visual grounding */
-        .glass-nav::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #b59a57 30%, #b59a57 70%, transparent);
-            opacity: 0.45;
         }
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
@@ -96,7 +72,7 @@
         }
         @media (max-width: 1023px) {
             .hero-bg-art {
-                opacity: 0.12;
+                opacity: 0.15;
             }
         }
         .hero-bg-art::after {
@@ -113,67 +89,31 @@
             object-fit: cover;
             object-position: right center;
         }
-        /* Mobile-Friendly iFrame Touch Container */
-        .responsive-iframe-container {
-            position: relative;
-            width: 100%;
-            -webkit-overflow-scrolling: touch;
-            touch-action: pan-y;
-        }
-        /* Info column cards in the Why Cadence section */
-        .info-column-card {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(228, 228, 231, 0.7);
-            border-radius: 1rem;
-            padding: 1.75rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .info-column-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px -8px rgba(0,0,0,0.04);
-            border-color: rgba(181, 154, 87, 0.25);
-        }
-        /* How It Works step connector */
-        .step-connector {
-            position: relative;
-        }
-        @media (min-width: 1024px) {
-            .step-connector::after {
-                content: '';
-                position: absolute;
-                top: 2rem;
-                left: calc(50% + 2.5rem);
-                width: calc(100% - 5rem);
-                height: 1px;
-                background: linear-gradient(90deg, rgba(228,228,231,0.8), rgba(181,154,87,0.2), rgba(228,228,231,0.8));
-            }
-        }
     </style>
 </head>
 <body class="bg-zinc-50 text-zinc-800 font-sans antialiased">
 
     <!-- TOP PROMO BANNER -->
-    <div id="promo-banner" class="bg-zinc-900 text-zinc-100 py-2.5 px-3 sm:px-4 text-center text-xs sm:text-sm font-medium relative z-50 flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 sm:gap-3">
-        <div class="inline-flex items-center space-x-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-zinc-800 text-zinc-200 border border-zinc-700">
-            <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Accepting New Patients</span>
-        </div>
-        <span class="text-xs sm:text-sm">Schedule your next doctor's appointment today.</span>
-        <a href="#scheduling-portal" class="inline-flex items-center gap-1.5 ml-1 sm:ml-2 px-3 py-1 sm:px-4 sm:py-1.5 bg-white text-zinc-900 font-semibold rounded-lg text-xs hover:bg-zinc-100 transition min-h-[36px] sm:min-h-[auto] whitespace-nowrap shrink-0">
-            <span>Book Your Appointment</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+    <div id="promo-banner" class="bg-zinc-900 text-zinc-100 py-2.5 px-4 text-center text-sm font-medium relative z-50 flex items-center justify-center gap-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-accent-light/20 text-accent-light">
+            Now Accepting Patients
+        </span>
+        <span>Schedule your next doctor's appointment today.</span>
+        <a href="#scheduling-portal" class="inline-flex items-center gap-1.5 ml-2 px-4 py-1.5 bg-white text-zinc-900 font-semibold rounded-lg text-xs hover:bg-zinc-100 transition">
+            Book Your Appointment <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </a>
     </div>
 
     <!-- MAIN NAV HEADER -->
     <header class="sticky top-0 z-40 w-full glass-nav transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 sm:h-28 flex items-center justify-between">
-            <!-- Brand Logo (Proportionally Scaled & Width Locked) -->
-            <a href="#" class="flex flex-col justify-center items-center group select-none shrink-0">
-                <div class="flex items-baseline space-x-1.5 leading-none whitespace-nowrap">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-28 flex items-center justify-between">
+            <!-- Brand Logo (Larger) -->
+            <a href="#" class="flex flex-col justify-center items-center group select-none">
+                <div class="flex items-baseline space-x-1.5 leading-none">
                     <span class="text-2xl sm:text-3xl lg:text-[40px] font-extrabold tracking-tight text-zinc-900 group-hover:text-zinc-700 transition duration-300">CADENCE</span>
                     <span class="text-2xl sm:text-3xl lg:text-[40px] font-light tracking-tight text-zinc-400">CLINIC</span>
                 </div>
-                <span class="text-[9.5px] sm:text-[11.5px] lg:text-[12.5px] text-zinc-400 tracking-[0.14em] uppercase font-semibold mt-2 sm:mt-2.5 block transition group-hover:text-zinc-650 leading-none text-center whitespace-nowrap">
+                <span class="text-[10px] sm:text-[12px] text-zinc-400 tracking-[0.16em] uppercase font-semibold mt-2.5 block transition group-hover:text-zinc-650 leading-none text-center w-full">
                     Medicine in sync with your health
                 </span>
             </a>
@@ -188,13 +128,13 @@
             <!-- Action Buttons -->
             <div class="flex items-center space-x-4">
                 <!-- Book Your Appointment Button -->
-                <a href="#scheduling-portal" class="hidden sm:inline-flex items-center px-5 py-3 text-base font-bold bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg shadow-sm transition transform hover:scale-[1.02] whitespace-nowrap shrink-0">
-                    <span class="whitespace-nowrap">Book Your Appointment</span>
+                <a href="#scheduling-portal" class="hidden sm:inline-flex items-center px-5 py-3 text-base font-bold bg-zinc-900 hover:bg-zinc-800 text-white rounded-lg shadow-sm transition transform hover:scale-[1.02]">
+                    <span>Book Your Appointment</span>
                 </a>
                 <!-- Patient Portal Direct Button -->
-                <button onclick="openPortalModal()" class="hidden sm:inline-flex items-center space-x-2 px-5 py-3 text-base font-bold bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-200 rounded-lg shadow-sm transition transform hover:scale-[1.02] whitespace-nowrap shrink-0">
+                <button onclick="openPortalModal()" class="hidden sm:inline-flex items-center space-x-2 px-5 py-3 text-base font-bold bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-200 rounded-lg shadow-sm transition transform hover:scale-[1.02]">
                     <i class="fa-solid fa-user-shield text-zinc-500"></i>
-                    <span class="whitespace-nowrap">Patient Portal</span>
+                    <span>Patient Portal</span>
                 </button>
 
                 <!-- Mobile Menu Button -->
@@ -211,22 +151,22 @@
             <a href="#faq" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-bold text-zinc-700 hover:bg-zinc-50 uppercase tracking-wide">FAQ</a>
             <hr class="border-zinc-200">
             <!-- Book Your Appointment Button -->
-            <a href="#scheduling-portal" onclick="toggleMobileMenu()" class="w-full flex items-center justify-center px-4 py-3 bg-zinc-900 text-white rounded-lg text-base font-bold shadow-sm whitespace-nowrap">
-                <span class="whitespace-nowrap">Book Your Appointment</span>
+            <a href="#scheduling-portal" onclick="toggleMobileMenu()" class="w-full flex items-center justify-center px-4 py-3 bg-zinc-900 text-white rounded-lg text-base font-bold shadow-sm">
+                <span>Book Your Appointment</span>
             </a>
             <!-- Patient Portal Button -->
-            <button onclick="toggleMobileMenu(); openPortalModal()" class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-white text-zinc-800 border border-zinc-200 rounded-lg text-base font-bold shadow-sm whitespace-nowrap">
+            <button onclick="toggleMobileMenu(); openPortalModal()" class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-white text-zinc-800 border border-zinc-200 rounded-lg text-base font-bold shadow-sm">
                 <i class="fa-solid fa-user-shield text-zinc-500"></i>
-                <span class="whitespace-nowrap">Patient Portal</span>
+                <span>Patient Portal</span>
             </button>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-20 pb-40 lg:pt-24 lg:pb-44 overflow-hidden border-b border-zinc-200/80">
+    <section class="relative pt-24 pb-36 overflow-hidden border-b border-zinc-200/80">
         <!-- Background Art — emerges organically from the right -->
         <div class="hero-bg-art">
-            <img src="images/967bd042-2555-43e2-b64c-2ccbc9e1c972.jpg" alt="" aria-hidden="true">
+            <img src="images/hero-fixed.png" alt="" aria-hidden="true">
         </div>
 
         <!-- Subtle Background Gradients -->
@@ -234,41 +174,44 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-xl space-y-7 text-left">
-                <!-- Proper H1 headline for typographic hierarchy -->
-                <h1 class="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold text-zinc-900 tracking-tight leading-snug">
-                    Primary Care Reimagined.
-                </h1>
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase bg-zinc-100 text-zinc-700 border border-zinc-200">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Accepting New Patients</span>
+                </div>
 
                 <p class="text-base sm:text-lg text-zinc-500 max-w-xl mr-auto font-light leading-relaxed">
-                    We are your partners in health, working to provide primary care medicine with a new standard of ease and efficiency. We offer seamless scheduling, transparent pricing, and use technology to ensure deeper, more focused time between you and your doctor.
+                    <span class="font-bold text-zinc-900">Primary Care Reimagined.</span> We are your partners in health, working to provide primary care medicine with a new standard of ease and efficiency. We offer seamless scheduling, transparent pricing, and use technology to ensure deeper, more focused time between you and your doctor.
                 </p>
 
-                <!-- Features Highlights (Refined Horizontal Pill Badges) -->
-                <div class="flex flex-wrap items-center gap-3 pt-1 pb-2">
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-zinc-100/90 border border-zinc-200/80 shadow-2xs transition hover:bg-zinc-100">
-                        <i class="fa-solid fa-laptop-medical text-zinc-600 text-xs"></i>
-                        <span class="text-xs font-semibold text-zinc-700 tracking-wide">Virtual Care</span>
+                <!-- Features Highlights Group (Stacked Vertically) -->
+                <div class="flex flex-col space-y-3.5 max-w-lg mr-auto pb-3">
+                    <div class="flex items-center space-x-3.5 text-zinc-600 justify-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center border border-zinc-200/60 shadow-sm">
+                            <i class="fa-solid fa-laptop-medical text-zinc-500 text-lg"></i>
+                        </div>
+                        <span class="text-sm font-semibold tracking-wide text-zinc-700">Virtual Care</span>
                     </div>
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-zinc-100/90 border border-zinc-200/80 shadow-2xs transition hover:bg-zinc-100">
-                        <i class="fa-solid fa-bolt text-zinc-600 text-xs"></i>
-                        <span class="text-xs font-semibold text-zinc-700 tracking-wide">Direct Scheduling</span>
+                    <div class="flex items-center space-x-3.5 text-zinc-600 justify-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center border border-zinc-200/60 shadow-sm">
+                            <i class="fa-solid fa-bolt text-zinc-500 text-lg"></i>
+                        </div>
+                        <span class="text-sm font-semibold tracking-wide text-zinc-700">Direct Scheduling</span>
                     </div>
-                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-zinc-100/90 border border-zinc-200/80 shadow-2xs transition hover:bg-zinc-100">
-                        <i class="fa-solid fa-tag text-zinc-600 text-xs"></i>
-                        <span class="text-xs font-semibold text-zinc-700 tracking-wide">Transparent Pricing</span>
+                    <div class="flex items-center space-x-3.5 text-zinc-600 justify-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center border border-zinc-200/60 shadow-sm">
+                            <i class="fa-solid fa-tag text-zinc-500 text-lg"></i>
+                        </div>
+                        <span class="text-sm font-semibold tracking-wide text-zinc-700">Transparent Pricing</span>
                     </div>
                 </div>
 
-                <!-- Subtle gold accent divider before CTAs -->
-                <div class="h-px w-20 bg-accent-light/40"></div>
-
                 <!-- Call To Actions -->
                 <div class="flex flex-col sm:flex-row items-start justify-start gap-4">
-                    <a href="#scheduling-portal" class="w-full sm:w-auto text-center px-8 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl shadow-lg transition transform hover:-translate-y-0.5 whitespace-nowrap shrink-0">
-                        <span class="whitespace-nowrap">Book Your Appointment</span>
+                    <a href="#scheduling-portal" class="w-full sm:w-auto text-center px-8 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                        Book Your Appointment
                     </a>
-                    <a href="#services" class="w-full sm:w-auto text-center px-8 py-3.5 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold rounded-xl border border-zinc-200 transition whitespace-nowrap shrink-0">
-                        <span class="whitespace-nowrap">Explore Services</span>
+                    <a href="#services" class="w-full sm:w-auto text-center px-8 py-3.5 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold rounded-xl border border-zinc-200 transition">
+                        Explore Services
                     </a>
                 </div>
             </div>
@@ -279,8 +222,8 @@
 
     <!-- MISSION STATEMENT SECTION -->
     <section class="py-20 bg-zinc-100 border-b border-zinc-200/80">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <span class="text-sm sm:text-base font-bold tracking-widest text-accent-light uppercase block">Our Mission</span>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <span class="text-xs font-bold tracking-widest text-accent-light uppercase block">Our Mission</span>
             <div class="h-0.5 w-16 bg-accent-light mx-auto"></div>
             <p class="text-base sm:text-lg text-zinc-600 font-light leading-relaxed">
                 At <span class="font-extrabold text-zinc-900">CADENCE</span> <span class="font-light text-zinc-400">CLINIC</span>, we are building a new standard in digital medicine. We believe technology should strengthen the doctor-patient relationship, not fragment it. Our focus is the patient encounter itself—combining direct primary care and telehealth medicine to increase your access to care, improve efficiency, and optimize your health.
@@ -293,29 +236,29 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1: What is Cadence Clinic -->
-                <div class="info-column-card space-y-4">
+                <div class="space-y-4">
                     <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-accent-light border border-zinc-200">
                         <i class="fa-solid fa-house-medical text-lg"></i>
                     </div>
                     <h3 class="text-lg font-bold text-zinc-900">What is Cadence Clinic?</h3>
                     <p class="text-sm text-zinc-500 font-light leading-relaxed">
-                        We are a medical practice offering direct primary care with a focus on metabolic health and longevity. We use technology to deliver your doctor's appointment and personalized medicine directly to you.
+                        We are a medical practice offering direct primary care with a focus on metabolic health and longevity. We leverage secure technology to deliver targeted health evaluations, clinical laboratory reviews, and personalized medical management directly to you.
                     </p>
                 </div>
 
                 <!-- Card 2: Why Cadence Clinic -->
-                <div class="info-column-card space-y-4">
+                <div class="space-y-4">
                     <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-accent-light border border-zinc-200">
                         <i class="fa-solid fa-clock text-lg"></i>
                     </div>
                     <h3 class="text-lg font-bold text-zinc-900">Why Cadence Clinic?</h3>
                     <p class="text-sm text-zinc-500 font-light leading-relaxed">
-                        Whether you need a one-time consultation or ongoing clinical management for complex medical issues, our mission is to eliminate traditional barriers to care. We are dedicated to streamlining wait times, providing transparent pricing, and simplifying your healthcare experience.
+                        Whether you need a one-time consultation or ongoing clinical management for complex medical issues, our mission is to eliminate traditional barriers to care. We are dedicated to removing the extended wait times, providing transparent pricing, and streamlining your healthcare experience.
                     </p>
                 </div>
 
                 <!-- Card 3: Our Providers -->
-                <div class="info-column-card space-y-4">
+                <div class="space-y-4">
                     <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center text-accent-light border border-zinc-200">
                         <i class="fa-solid fa-user-doctor text-lg"></i>
                     </div>
@@ -333,23 +276,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <span class="text-sm sm:text-base font-bold tracking-widest text-accent-light uppercase block">Clinical Scope</span>
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-6">
+                <span class="text-xs font-bold tracking-widest text-accent-light uppercase block">Clinical Scope</span>
                 <div class="h-0.5 w-16 bg-accent-light mx-auto"></div>
-                <p class="text-zinc-500 font-light text-sm sm:text-base pt-1">Our clinic offers comprehensive primary care services, which include these areas of care and more.</p>
+                <h2 class="text-2xl sm:text-3xl font-sans font-bold text-zinc-900">Services Offered</h2>
+                <p class="text-zinc-500 font-light text-sm sm:text-base pt-2">Our clinic offers comprehensive primary care services, which include these areas of care and more.</p>
             </div>
 
 
             <!-- Services Grid (Compact & filterable) -->
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300">
                 
-                <!-- Service 12: Allergies & Asthma -->
+                <!-- Service 12: Allergy & Asthma Management -->
                 <a href="./allergy-asthma.html" data-category="primary" class="service-card glass-card p-6 rounded-2xl space-y-3.5 flex flex-col justify-between group cursor-pointer transition-all duration-300 transform scale-100 opacity-100">
                     <div class="space-y-2.5">
                         <div class="w-9 h-9 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
                             <i class="fa-solid fa-wind text-base text-sky-400"></i>
                         </div>
-                        <h3 class="text-base font-bold text-zinc-900">Allergies & Asthma</h3>
+                        <h3 class="text-base font-bold text-zinc-900">Allergy & Asthma Management</h3>
                         <p class="text-xs text-zinc-500 font-light leading-relaxed">
                             Ongoing management and optimized control of environmental allergies, seasonal rhinitis, and mild-to-moderate asthma to improve your daily quality of life.
                         </p>
@@ -366,20 +310,6 @@
                         <h3 class="text-base font-bold text-zinc-900">Anxiety & Depression</h3>
                         <p class="text-xs text-zinc-500 font-light leading-relaxed">
                             Compassionate, evidence-based mental health support. We provide dedicated care for anxiety and depression through supportive clinical evaluations, lifestyle modifications, and precise medication management to help you regain balance and peace of mind.
-                        </p>
-                    </div>
-                    <span class="inline-flex items-center gap-1 text-[11px] font-bold text-accent-light group-hover:gap-2 transition-all mt-1">Learn More <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
-                </a>
-
-                <!-- Service 9: Blood Sugar & Endocrine Disorders -->
-                <a href="./endocrine-disorders.html" data-category="primary" class="service-card glass-card p-6 rounded-2xl space-y-3.5 flex flex-col justify-between group cursor-pointer transition-all duration-300 transform scale-100 opacity-100">
-                    <div class="space-y-2.5">
-                        <div class="w-9 h-9 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
-                            <i class="fa-solid fa-droplet text-base text-cyan-500"></i>
-                        </div>
-                        <h3 class="text-base font-bold text-zinc-900">Blood Sugar & Endocrine Disorders</h3>
-                        <p class="text-xs text-zinc-500 font-light leading-relaxed">
-                            Targeted management for hormonal health, including precise diagnosis and long-term care optimization for thyroid conditions and diabetes.
                         </p>
                     </div>
                     <span class="inline-flex items-center gap-1 text-[11px] font-bold text-accent-light group-hover:gap-2 transition-all mt-1">Learn More <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
@@ -408,6 +338,20 @@
                         <h3 class="text-base font-bold text-zinc-900">Custom Formulations</h3>
                         <p class="text-xs text-zinc-500 font-light leading-relaxed">
                             Through partnerships with compounding pharmacies, we can prescribe customized, novel medication formulations tailored specifically to your unique needs and preferences.
+                        </p>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-[11px] font-bold text-accent-light group-hover:gap-2 transition-all mt-1">Learn More <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
+                </a>
+
+                <!-- Service 9: Endocrine Disorders -->
+                <a href="./endocrine-disorders.html" data-category="primary" class="service-card glass-card p-6 rounded-2xl space-y-3.5 flex flex-col justify-between group cursor-pointer transition-all duration-300 transform scale-100 opacity-100">
+                    <div class="space-y-2.5">
+                        <div class="w-9 h-9 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-900 border border-zinc-200">
+                            <i class="fa-solid fa-droplet text-base text-cyan-500"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-zinc-900">Endocrine Disorders</h3>
+                        <p class="text-xs text-zinc-500 font-light leading-relaxed">
+                            Targeted management for hormonal health, including precise diagnosis and long-term care optimization for thyroid conditions and diabetes.
                         </p>
                     </div>
                     <span class="inline-flex items-center gap-1 text-[11px] font-bold text-accent-light group-hover:gap-2 transition-all mt-1">Learn More <i class="fa-solid fa-arrow-right text-[9px]"></i></span>
@@ -561,24 +505,28 @@
     <section class="py-24 bg-white border-b border-zinc-200/80 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sm sm:text-base font-bold tracking-widest text-accent-light uppercase block">How It Works</span>
+                <span class="text-xs font-bold tracking-widest text-accent-light uppercase block">How It Works</span>
                 <div class="h-0.5 w-16 bg-accent-light mx-auto"></div>
+                <h2 class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">Sign Up With Us Today</h2>
+                <p class="text-sm text-zinc-500 font-light max-w-lg mx-auto">
+                    Start your health journey with us.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Step 1: Book -->
-                <div class="step-connector text-center space-y-3 p-4">
+                <div class="text-center space-y-3 p-4">
                     <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
                         <i class="fa-solid fa-calendar-days text-xl"></i>
                     </div>
                     <h3 class="font-bold text-lg text-zinc-900">1. Book Your Appointment</h3>
                     <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
-                        Choose an available time on our online calendar below. You will receive a confirmation link with your doctor's information via email.
+                        Choose an available time on our online calendar below. You will receive a confirmation link with your doctor’s information via email.
                     </p>
                 </div>
 
                 <!-- Step 2: Complete -->
-                <div class="step-connector text-center space-y-3 p-4">
+                <div class="text-center space-y-3 p-4">
                     <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
                         <i class="fa-solid fa-file-signature text-xl"></i>
                     </div>
@@ -589,7 +537,7 @@
                 </div>
 
                 <!-- Step 3: Connect -->
-                <div class="step-connector text-center space-y-3 p-4">
+                <div class="text-center space-y-3 p-4">
                     <div class="w-16 h-16 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center text-accent-light mx-auto shadow-sm">
                         <i class="fa-solid fa-video text-xl"></i>
                     </div>
@@ -606,7 +554,7 @@
                     </div>
                     <h3 class="font-bold text-lg text-zinc-900">4. Thrive</h3>
                     <p class="text-xs sm:text-sm text-zinc-500 font-light leading-relaxed">
-                        Following your visit, prescriptions will be sent to your preferred pharmacy and you will receive a comprehensive care summary including any forms needed for labs and tests.
+                        Following your visit, all prescriptions will be sent immediately to your preferred pharmacy. You will receive a comprehensive care summary that will include any forms needed for labs, imaging, or other tests.
                     </p>
                 </div>
             </div>
@@ -619,8 +567,12 @@
             
             <!-- Header -->
             <div class="text-center mb-16 space-y-4">
-                <span class="text-sm sm:text-base font-bold tracking-widest text-accent-light uppercase block">Frequently Asked Questions</span>
+                <h2 class="text-xs font-bold tracking-widest text-accent-light uppercase">Help & Guidance</h2>
                 <div class="h-0.5 w-16 bg-accent-light mx-auto"></div>
+                <p class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">Frequently Asked Questions</p>
+                <p class="text-zinc-500 font-light text-sm sm:text-base">
+                    Find answers regarding our virtual consultations, out-of-pocket pricing, and onboarding policies.
+                </p>
             </div>
 
             <!-- FAQ Accordion Container -->
@@ -629,7 +581,7 @@
                 <!-- FAQ 1 -->
                 <div class="border border-zinc-200 rounded-xl overflow-hidden bg-white">
                     <button class="faq-toggle w-full p-6 text-left font-semibold text-sm sm:text-base text-zinc-800 flex items-center justify-between focus:outline-none hover:bg-zinc-50 transition">
-                        <span>Is care fully virtual?</span>
+                        <span>Is this care fully virtual?</span>
                         <i class="fa-solid fa-chevron-down text-zinc-400 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0px;">
@@ -647,7 +599,7 @@
                     </button>
                     <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0px;">
                         <div class="p-6 border-t border-zinc-150 text-sm sm:text-base text-zinc-555 font-light leading-relaxed">
-                            We are not currently accepting medical insurance. We operate on a direct primary care model, offering flat-rate visit fees to ensure cost transparency. We do have a modified fee schedule for those on a fixed income; please reach out if you wish to receive more information.
+                            We are currently a cash-only practice. 
                         </div>
                     </div>
                 </div>
@@ -688,10 +640,11 @@
             
             <!-- Header -->
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-sm sm:text-base font-bold tracking-widest text-accent-light uppercase block">Cost Transparency</span>
+                <h2 class="text-xs font-bold tracking-widest text-accent-light uppercase">Cost Transparency</h2>
                 <div class="h-0.5 w-16 bg-accent-light mx-auto"></div>
+                <p class="text-3xl sm:text-4xl font-sans font-bold text-zinc-900">Simple Pricing, Direct Value</p>
                 <p class="text-zinc-500 font-light text-sm sm:text-base">
-                    We provide clear, upfront consultation fees so you can schedule your appointment with complete financial clarity.
+                    Healthcare should not be a guessing game. We offer transparent pricing structures with discount partner benefits so you always know exactly what you are paying.
                 </p>
             </div>
 
@@ -750,7 +703,7 @@
                 
                 <!-- Left Text Column: Booking details -->
                 <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
-                    <span class="text-sm sm:text-base font-bold tracking-widest text-accent-light uppercase flex items-center gap-2">
+                    <span class="text-xs font-bold tracking-widest text-accent-light uppercase flex items-center gap-2">
                         <i class="fa-solid fa-calendar-check"></i> Online Scheduling
                     </span>
                     <div class="h-0.5 w-16 bg-accent-light"></div>
@@ -806,11 +759,11 @@
                             <span class="text-xs bg-zinc-900 px-2.5 py-1 rounded text-zinc-450 border border-zinc-755">Secure HIPAA Portal</span>
                         </div>
 
-                        <!-- Charm Health Embedded Calendar (Mobile Touch Optimized Wrapper) -->
-                        <div class="w-full responsive-iframe-container">
+                        <!-- Charm Health Embedded Calendar -->
+                        <div class="w-full">
                             <iframe 
                                 width="100%" 
-                                class="h-[600px] sm:h-[800px] lg:h-[950px]" 
+                                height="1000" 
                                 src="https://ehr.charmtracker.com/publicCal.sas?method=getCal&digest=cbe558b0bfeef557fc4fe6b58c306d92d9c2034a58b739ccbca37d8352ecf1526ee57013c1a537e6b4b1c2f1f0c5e3f6a0ae868b6eb0918a" 
                                 style="overflow:hidden; display:block; border:none;" 
                                 frameborder="0"
@@ -835,7 +788,7 @@
                 <div class="space-y-3">
                     <h3 class="text-2xl sm:text-3xl font-sans font-bold text-white">Have a Specific Health Question?</h3>
                     <p class="text-sm text-zinc-400 font-light max-w-md">
-                        Speak directly with the clinic administration to learn about our services.
+                        Speak directly with the clinic administration to learn about compounding capabilities, scheduling availability, or our patient portal.
                     </p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 md:justify-end">
@@ -869,14 +822,16 @@
                     <a href="#scheduling-portal" class="hover:text-white transition">Scheduling</a>
                     <a href="#faq" class="hover:text-white transition">FAQ</a>
                     <a href="#" onclick="openPortalModal(); return false;" class="hover:text-white transition font-medium text-accent-light">Patient Portal Login</a>
-                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition">Terms of Service</a>
-                    <a href="#" class="hover:text-white transition">HIPAA Disclosure</a>
                 </div>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-[11px] text-zinc-500 font-light">
-                <p>&copy; 2026 Cadence Clinic Medical Group. All rights reserved.</p>
+                <p>&copy; 2026 Cadence Clinic LLC. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:underline">HIPAA Disclosure</a>
+                </div>
             </div>
 
             <!-- Medical Disclaimer -->
@@ -886,9 +841,9 @@
         </div>
     </footer>
 
-    <!-- PATIENT PORTAL LOGIN MODAL (Mobile Responsive Viewport Fix) -->
-    <div id="portal-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-zinc-950/80 backdrop-blur-sm transition-all duration-300">
-        <div class="bg-white rounded-2xl border border-zinc-200 shadow-2xl w-[94vw] max-w-md max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300" id="portal-modal-card">
+    <!-- PATIENT PORTAL LOGIN MODAL -->
+    <div id="portal-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-sm transition-all duration-300">
+        <div class="bg-white rounded-2xl border border-zinc-200 shadow-2xl w-full max-w-md overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="portal-modal-card">
             
             <!-- Modal Header -->
             <div class="px-6 py-4 bg-zinc-900 text-white border-b border-zinc-800/80 flex items-center justify-between">
